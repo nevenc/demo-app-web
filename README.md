@@ -22,4 +22,18 @@ advisor build-config get
 jq '.sbom' target/.advisor/build-config.json  > sbom-3.5.17-with-pins.cdx.json
 ```
 
+## Application Upgrade
+
+```
+advisor upgrade-plan get
+advisor upgrade-plan apply --squash=3
+```
+
+## Generate SBOM again
+
+```
+advisor build-config get
+jq '.sbom' target/.advisor/build-config.json  > sbom-4.1.1.cdx.json
+```
+
 
